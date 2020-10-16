@@ -17,7 +17,6 @@ def main():
         input_product = int(input(f'How much is {num1} times {num2} '))
         random_product = calculate_product(num1,num2)
         if input_product == random_product:
-            #print(f'{num1} times {num2} is {input_product}')
             print('Done')
             break
         else:

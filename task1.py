@@ -5,25 +5,28 @@ MAX = 100
 
 #defining functions
 def is_prime(number):
-    """ Calculate the number is prime"""
-    flag = 0
-    if number > 1:
-        for j in range(2,number//2):
+    """ Calculate if the number is prime"""
+    flag = False
+    if number == 1:
+        flag = False
+    elif number ==2:
+        flag = True
+    else:        
+        for j in range(2,number):
             if (number % j) == 0:
-                flag = 1
-                break  
-
-        if flag == 1:
-            print(f'The random number {num} is not a prime number.')
-        else:
-            print(f'The random number {num} is a prime number.')          
-    else:
-        print(f'The random number {number} is not a prime number.')
+                flag = False
+                break
+            else:
+                flag = True
+    return flag                 
 
 #start of main program
 for i in range(1,7):
     num = random.randint(MIN,MAX)
-    is_prime(num)
+    if(is_prime(num) == True):
+        print(f'The random number {num} is a prime number.')
+    else:
+        print(f'The random number {num} is not a prime number.')        
     
 
 
